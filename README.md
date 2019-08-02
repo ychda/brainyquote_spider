@@ -3,6 +3,8 @@
 
 > The Chinese nation is a great nation that has been through hardships and adversity but remains indomitable, the Chinese people are a great people. They are industrious and brave and they never pause in pursuit of progress.
 
+### 输入： scrapy crawl quotev2
+
 ### 输出：example
 ```sql
     {
@@ -18,6 +20,36 @@
 	"url" : "https://www.brainyquote.com/quotes/xi_jinping_875846"
     }
 ```
+----------------
+```
+2019-08-02 12:42:40 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 17995397,
+ 'downloader/request_count': 45227,
+ 'downloader/request_method_count/GET': 45227,
+ 'downloader/response_bytes': 729567755,
+ 'downloader/response_count': 45227,
+ 'downloader/response_status_count/200': 45227,
+ 'elapsed_time_seconds': 2801.401287,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2019, 8, 2, 4, 42, 40, 614332),
+ 'item_scraped_count': 744433,
+ 'log_count/DEBUG': 789660,
+ 'log_count/INFO': 56,
+ 'memusage/max': 167641088,
+ 'memusage/startup': 55152640,
+ 'request_depth_max': 29,
+ 'response_received_count': 45227,
+ 'scheduler/dequeued': 45227,
+ 'scheduler/dequeued/memory': 45227,
+ 'scheduler/enqueued': 45227,
+ 'scheduler/enqueued/memory': 45227,
+ 'start_time': datetime.datetime(2019, 8, 2, 3, 55, 59, 213045)}
+2019-08-02 12:42:40 [scrapy.core.engine] INFO: Spider closed (finished)
+(venv) ychda@cstdlib:~/PycharmProjects/scrapy/brainyquote_com$ 
+```
+----------------
+IGNORE
+----------------
 
 `response.xpath('//ul[contains(@class,"pagination")]').xpath('li[contains(@class,"disable")]').getall()`
 ```
