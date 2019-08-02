@@ -20,6 +20,13 @@
 	"url" : "https://www.brainyquote.com/quotes/xi_jinping_875846"
     }
 ```
+
+### 指定作者搜索
+```
+$ scrapy crawl author_quote -a author="lu xun"
+$ scrapy crawl author_quote
+如果不指定参数则在列表中随机选择一个。
+```
 ----------------
 ```
 2019-08-02 12:42:40 [scrapy.statscollectors] INFO: Dumping Scrapy stats:

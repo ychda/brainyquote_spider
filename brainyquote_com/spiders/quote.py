@@ -44,7 +44,7 @@ class QuoteSpider(scrapy.Spider):
     start_urls = ['https://www.brainyquote.com/authors']
 
     """
-    从start_urls开始，根据字母排序，页面缺少x字母
+    从start_urls开始，根据字母排序
     in: https://www.brainyquote.com/authors
     """
 
