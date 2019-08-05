@@ -1,5 +1,9 @@
 ## scrapy spider - brainyquote.com
 
+- 20190805 - 修复了作者页面带有背景图片的quote没有抓取的问题。
+   - author 27845
+   - quote 75W
+
 > 中国人民是伟大的人民。
 
 > The Chinese nation is a great nation that has been through hardships and adversity but remains indomitable, the Chinese people are a great people. They are industrious and brave and they never pause in pursuit of progress.

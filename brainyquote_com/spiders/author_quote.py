@@ -30,7 +30,8 @@ class AuthorQuoteSpider(scrapy.Spider):
     """
 
     def parse(self, response):
-        for a in response.xpath('//div[@id="quotesList"]//div[@class="qll-bg"]'):
+        # for a in response.xpath('//div[@id="quotesList"]//div[@class="qll-bg"]'):
+        for a in response.xpath('//div[@id="quotesList"]/div[contains(@id, "qpos_")]'):
             quote = a.xpath('.//a[@title="view quote"]/text()').get()
             author = a.xpath('.//a[@title="view author"]/text()').get()
             tags = a.xpath('.//div[@class="kw-box"]/a/text()').getall()

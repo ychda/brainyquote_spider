@@ -15,7 +15,7 @@ logging.WARNING
 logging.INFO
 logging.DEBUG
 """
-LOG_LEVEL = 'WARNING'
+# LOG_LEVEL = 'WARNING'
 
 BOT_NAME = 'brainyquote_com'
 
@@ -71,7 +71,7 @@ ROBOTSTXT_OBEY = False
 
 # mongodb
 MONGO_URI = 'mongodb://localhost:27017'
-MONGO_DATABASE = 'ychdacn'
+MONGO_DATABASE = 'test'
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
