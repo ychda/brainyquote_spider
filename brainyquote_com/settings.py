@@ -54,14 +54,15 @@ ROBOTSTXT_OBEY = False
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 # SPIDER_MIDDLEWARES = {
-    # 'brainyquote_com.middlewares.BrainyquoteComSpiderMiddleware': 543,
+# 'brainyquote_com.middlewares.BrainyquoteComSpiderMiddleware': 543,
 # }
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
-# DOWNLOADER_MIDDLEWARES = {
-#    'brainyquote_com.middlewares.BrainyquoteComDownloaderMiddleware': 543,
-# }
+DOWNLOADER_MIDDLEWARES = {
+    # 'brainyquote_com.middlewares.BrainyquoteComDownloaderMiddleware': 543,
+    'brainyquote_com.middlewares.ProxyMiddleware': 543,
+}
 
 # Enable or disable extensions
 # See https://docs.scrapy.org/en/latest/topics/extensions.html
@@ -70,8 +71,8 @@ ROBOTSTXT_OBEY = False
 # }
 
 # mongodb
-MONGO_URI = 'mongodb://localhost:27017'
-MONGO_DATABASE = 'test'
+MONGO_URI = 'mongodb://ychda.cn:27017'
+MONGO_DATABASE = 'ychdacn'
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html

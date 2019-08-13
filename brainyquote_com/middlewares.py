@@ -6,6 +6,9 @@
 # https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
 from scrapy import signals
+import random
+import urllib.request
+import json
 
 
 class BrainyquoteComSpiderMiddleware(object):
@@ -101,3 +104,17 @@ class BrainyquoteComDownloaderMiddleware(object):
 
     def spider_opened(self, spider):
         spider.logger.info('Spider opened: %s' % spider.name)
+
+
+class ProxyMiddleware(object):
+
+    def process_request(self, request, spider):
+        proxies = []
+        with urllib.request.urlopen('http://ychda.tpddns.cn:8111/proxy?count=10') as url:
+            data = json.loads(url.read().decode())
+            for ipp in data:
+                proxy = 'http://' + ipp[0] + ':' + ipp[1]
+                proxies.append(proxy)
+        ip = random.choice(proxies)
+        print(ip)
+        request.meta['proxy'] = ip

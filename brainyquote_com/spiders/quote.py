@@ -64,4 +64,5 @@ class QuoteSpider(scrapy.Spider):
         """
         next_page = response.xpath('//ul[contains(@class,"pagination")]/li/a[contains(text(),"Next")]/@href').get()
         if next_page is not None:
-            yield response.follow(next_page, callback=self.parse_author)
+            yield response.follow(next_page, callback=self.parse_author,
+                                  meta={'download_timeout': 5, 'max_retry_times': 50})
